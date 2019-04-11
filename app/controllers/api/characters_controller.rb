@@ -10,7 +10,12 @@ class Api::CharactersController < ApplicationController
   end
 
   def create
-    
+    @character = Character.create(
+      first_name: params[:input_first_name],
+      last_name: params[:input_last_name],
+      color: params[:input_color]
+    )
+    render 'create.json.jbuilder'
   end
 
   def update
