@@ -4,11 +4,12 @@ class Api::CharactersController < ApplicationController
     render 'index.json.jbuilder'
   end
 
-  def create
-    
+  def show
+    @character = Character.find_by(id: params[:id])
+    render 'show.json.jbuilder'
   end
 
-  def show
+  def create
     
   end
 

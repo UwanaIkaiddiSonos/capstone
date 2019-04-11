@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   namespace :api do
     get "/characters" => 'characters#index'
     post "/characters" => 'characters#create'
-    get "/characters" => 'characters#show'
+    get "/characters/:id" => 'characters#show'
     patch "/characters" => 'characters#update'
     delete "/characters" => 'characters#destroy'
   end
