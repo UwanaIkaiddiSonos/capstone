@@ -3,5 +3,10 @@
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+# Character.create([
+#   {
+#     first_name: "Yuki",
+#     last_name: "Sohma",
+#     color: '#ffffff'
+#   }
+# ])
