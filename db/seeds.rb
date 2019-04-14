@@ -11,23 +11,8 @@
 #   }
 # ])
 
-Label.create([
-  {
-    name: "start"
-  },
-  {
-    name: "rightaway"
-  },
-  {
-    name: "game"
-  },
-  {
-    name: "book"
-  },
-  {
-    name: "marry"
-  },
-  {
-    name: "later"
-  }
-])
+# Label.create([
+#   {
+#     name: "start"
+#   },
+# ])
