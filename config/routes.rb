@@ -17,5 +17,13 @@ Rails.application.routes.draw do
     get "/labels/:id" => 'labels#show'
     patch "/labels/:id" => 'labels#update'
     delete "/labels/:id" => 'labels#destroy'
+
+    #Background Image
+    get "/background_images" => 'background_images#index'
+    post "/background_images" => 'background_images#create'
+    get "/background_images/:id" => 'background_images#show'
+    patch "/background_images/:id" => 'background_images#update'
+    delete "/background_images/:id" => 'background_images#destroy'
+
   end
 end
