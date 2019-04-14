@@ -10,3 +10,24 @@
 #     color: '#ffffff'
 #   }
 # ])
+
+Label.create([
+  {
+    name: "start"
+  },
+  {
+    name: "rightaway"
+  },
+  {
+    name: "game"
+  },
+  {
+    name: "book"
+  },
+  {
+    name: "marry"
+  },
+  {
+    name: "later"
+  }
+])
