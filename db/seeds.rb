@@ -16,3 +16,9 @@
 #     name: "start"
 #   },
 # ])
+# 
+# Background.create([
+#   {
+#     name: "start"
+#   },
+# ])
