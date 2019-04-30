@@ -1,1 +1,1 @@
-json.message "This is DELETE - Transition"
+json.message "Transition deleted"

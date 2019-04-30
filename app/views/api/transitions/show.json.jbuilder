@@ -1,1 +1,2 @@
-json.message "This is SHOW - Transitions"
+json.id @transition.id
+json.name @transition.name
