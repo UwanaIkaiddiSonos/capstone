@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_30_001148) do
+ActiveRecord::Schema.define(version: 2019_04_30_160806) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,12 @@ ActiveRecord::Schema.define(version: 2019_04_30_001148) do
   create_table "dialogues", force: :cascade do |t|
     t.integer "Character_id"
     t.text "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "drafts", force: :cascade do |t|
+    t.text "output"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

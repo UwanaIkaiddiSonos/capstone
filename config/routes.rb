@@ -5,6 +5,13 @@ Rails.application.routes.draw do
   # EXAMPLE JSON ROUTE WITH API NAMESPACE
   namespace :api do
 
+    #Background Image
+    get "/background_images" => 'background_images#index'
+    post "/background_images" => 'background_images#create'
+    get "/background_images/:id" => 'background_images#show'
+    patch "/background_images/:id" => 'background_images#update'
+    delete "/background_images/:id" => 'background_images#destroy'
+
     # Characters
     get "/characters" => 'characters#index'
     post "/characters" => 'characters#create'
@@ -12,19 +19,18 @@ Rails.application.routes.draw do
     patch "/characters/:id" => 'characters#update'
     delete "/characters/:id" => 'characters#destroy'
 
+    # Drafts
+    get "/drafts" => 'drafts#convert'
+    get "/drafts" => 'drafts#index'
+    post "/drafts" => 'drafts#create'
+    patch "/drafts/:id" => 'drafts#update'
+
     # Labels
-    get "/labels/final" => 'labels#final'
     get "/labels" => 'labels#index'
     post "/labels" => 'labels#create'
     get "/labels/:id" => 'labels#show'
     patch "/labels/:id" => 'labels#update'
     delete "/labels/:id" => 'labels#destroy'
-    #Background Image
-    get "/background_images" => 'background_images#index'
-    post "/background_images" => 'background_images#create'
-    get "/background_images/:id" => 'background_images#show'
-    patch "/background_images/:id" => 'background_images#update'
-    delete "/background_images/:id" => 'background_images#destroy'
 
     #Transitions
     get "/transitions" => 'transitions#index'
