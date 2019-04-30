@@ -13,12 +13,12 @@ Rails.application.routes.draw do
     delete "/characters/:id" => 'characters#destroy'
 
     # Labels
+    get "/labels/final" => 'labels#final'
     get "/labels" => 'labels#index'
     post "/labels" => 'labels#create'
     get "/labels/:id" => 'labels#show'
     patch "/labels/:id" => 'labels#update'
     delete "/labels/:id" => 'labels#destroy'
-
     #Background Image
     get "/background_images" => 'background_images#index'
     post "/background_images" => 'background_images#create'
