@@ -24,9 +24,7 @@ class Api::LabelsController < ApplicationController
   end
 
   def create
-    p "Enter image name:"
-    image_name = gets.chomp
-    show(image_name)
+    @image_name = params[:input_image_name]
     # @label = Label.new(
     #   name: params[:input_name]
     # )
@@ -55,7 +53,7 @@ class Api::LabelsController < ApplicationController
     final_result = ""
     @short_name = character[0].downcase
     final_result += "# Characters used in-game\n"
-    final_result += "define #{character[0].downcase} = Character(_(\"#{character}\"), color=\"##{color_hex}\")"
+    final_result += "define #{character[0].downcase} = Character(_(\"#{character}\"), color=\"#{color_hex}\")\n"
     return final_result 
   end
 
