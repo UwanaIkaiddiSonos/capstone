@@ -1,1 +1,2 @@
-json.message "This is SHOW"
+json.id @background_image.id
+json.name @background_image.name

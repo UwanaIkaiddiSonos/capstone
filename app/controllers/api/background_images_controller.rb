@@ -11,6 +11,7 @@ class Api::BackgroundImagesController < ApplicationController
 
   def create
     @background_image = BackgroundImage.new(
+      name: params[:input_name],
       url: params[:input_url]
     )
     @background_image.save
@@ -21,6 +22,7 @@ class Api::BackgroundImagesController < ApplicationController
     @background_image = BackgroundImage.find_by(id: params[:id])
 
     @background_image.update(
+      name: params[:input_name] || @background_image.name,
       url: params[:input_url] || @background_image.url
     )
     render 'show.json.jbuilder'

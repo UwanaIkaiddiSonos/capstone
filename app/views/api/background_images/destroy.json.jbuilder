@@ -1,1 +1,1 @@
-json.message "This is DELETE"
+json.message "Entry deleted"
