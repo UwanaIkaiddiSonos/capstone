@@ -1,11 +1,25 @@
 class Api::DraftsController < ApplicationController
+  # def create
+  #   @draft = Draft.new(
+  #     first_name: params[:input_first_name],
+  #     color: params[:input_color]
+  #   )
+
+  #   @draft.save
+  #   #render 'show.json.jbuilder'
+  # end
   def convert
-    # name = params[:name]
-    # hex = params[:hex]
+    first_name = params[:input_first_name]
+    color = params[:input_color]
+    label = params[:input_label_name]
+    scene = params[:input_scene_name]
+    transition = params[:input_transition_name]
+
     @result = ""
-    @result += add_character("Sylvie", "333333")
-    @result += add_label("meadow")
-    @result += add_scene("school", "fade")
+    @result += add_character(first_name, color)
+    # @result += add_character("Sylvie", "#000000")
+    @result += add_label(label)
+    @result += add_scene(scene, transition)
     @result += show_character("sylvie green smile")
     @result += dialogue("s", "Hi, I'm Sylvie!")
     @result += menu("lunch", "Where should we eat?", "Grab a burger", "burger", "Get tacos", "tacos")
@@ -24,7 +38,7 @@ class Api::DraftsController < ApplicationController
 
   def add_label(label_name)
     final_result = ""
-    final_result += "label #{label_name.downcase}\n"
+    final_result += "label #{label_name}\n"
   end
 
   def add_scene(background, transition)

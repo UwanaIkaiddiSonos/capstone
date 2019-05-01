@@ -22,7 +22,7 @@ Rails.application.routes.draw do
     # Drafts
     get "/drafts" => 'drafts#convert'
     get "/drafts" => 'drafts#index'
-    post "/drafts" => 'drafts#create'
+    post "/drafts" => 'drafts#convert'
     patch "/drafts/:id" => 'drafts#update'
 
     # Labels
