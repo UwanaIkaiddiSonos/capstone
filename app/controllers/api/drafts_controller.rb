@@ -10,19 +10,26 @@ class Api::DraftsController < ApplicationController
   # end
   def convert
     first_name = params[:input_first_name]
+    short_name = first_name[0].downcase
     color = params[:input_color]
     label = params[:input_label_name]
     scene = params[:input_scene_name]
     transition = params[:input_transition_name]
+    dialogue = params[:input_dialogue]
+    menu = params[:input_menu]
+    intro = params[:input_intro]
+    choice1_label = params[:input_choice1_label]
+    choice1 = params[:input_choice1]
+    choice2_label = params[:input_choice2_label]
+    choice2 = params[:input_choice2]
 
     @result = ""
     @result += add_character(first_name, color)
-    # @result += add_character("Sylvie", "#000000")
     @result += add_label(label)
     @result += add_scene(scene, transition)
-    @result += show_character("sylvie green smile")
-    @result += dialogue("s", "Hi, I'm Sylvie!")
-    @result += menu("lunch", "Where should we eat?", "Grab a burger", "burger", "Get tacos", "tacos")
+    # @result += show_character("sylvie green smile")
+    @result += dialogue(short_name, dialogue)
+    @result += menu(menu, intro, choice1_label, choice1, choice2_label, choice2)
 
     render 'convert.json.jbuilder'
   end
