@@ -13,6 +13,7 @@ class Api::DraftsController < ApplicationController
     short_name = first_name[0].downcase
     color = params[:input_color]
     label = params[:input_label_name]
+    p label
     scene = params[:input_scene_name]
     transition = params[:input_transition_name]
     dialogue = params[:input_dialogue]
