@@ -47,15 +47,15 @@ class Api::DraftsController < ApplicationController
 
   def add_label(label_name)
     final_result = ""
-    final_result += "label #{label_name}\n"
+    final_result += "label #{label_name}:\n"
     return final_result
   end
 
   def add_scene(background, transition)
     final_result = ""
     if background != " "
-      final_result += "scene bg #{background}\n"
-      final_result += "with #{transition}\n"
+      final_result += "\tscene bg #{background}\n"
+      final_result += "\twith #{transition}\n"
     end
     return final_result
   end
@@ -73,7 +73,7 @@ class Api::DraftsController < ApplicationController
   def dialogue(short_name, narration)
     final_result = ""
     if narration != " "
-      final_result += "\t#{short_name} #{narration}\n"
+      final_result += "\t#{short_name} \"#{narration}\"\n"
     end
     return final_result
   end
@@ -81,11 +81,11 @@ class Api::DraftsController < ApplicationController
   def menu(menu_name, intro_text, choice1, label1, choice2, label2)
     final_result = ""
     if menu_name != " "
-      final_result += "\tmenu #{menu_name}\n"
-      final_result += "\t\t#{intro_text}\n"
-      final_result += "\t\t#{choice1}\n"
+      final_result += "\tmenu #{menu_name}:\n"
+      final_result += "\t\t\"#{intro_text}\"\n"
+      final_result += "\t\t\"#{choice1}\":\n"
       final_result += "\t\t\tjump #{label1}\n"
-      final_result += "\t\t#{choice2}\n"
+      final_result += "\t\t\"#{choice2}\":\n"
       final_result += "\t\t\tjump #{label2}\n"
     end
     return final_result
