@@ -28,6 +28,9 @@ class Api::DraftsController < ApplicationController
     @result = ""
     inputs.each do |input|
       if input['type'] == 'Label'
+        if @result.length > 60
+          @result += "\treturn\n"
+        end
         @result += add_label(input["userInput"])
       elsif input['type'] == 'Dialogue'
         @result += dialogue(input['character'][0].downcase, input['userInput'])
@@ -39,11 +42,11 @@ class Api::DraftsController < ApplicationController
         @result += add_transition(input['userInput'])
       elsif input['type'] == 'Character'
         @result += add_character(input['userInput'], input['color'])
+      elsif input['type'] == 'CharacterImage'
+        @result += add_character_image(input['userInput'])
       end
     end
-
-    # @result += show_character("sylvie green smile")
-
+    @result += "\treturn"
     render 'convert.json.jbuilder'
   end
 
@@ -80,10 +83,10 @@ class Api::DraftsController < ApplicationController
   #   final_result += "play music \"#{music_file}\""
   # end
 
-  # def show_character(image_name)
-  #   final_result = ""
-  #   final_result += "\tshow #{image_name}\n"
-  # end
+  def add_character_image(image_name)
+    final_result = ""
+    final_result += "\tshow #{image_name}\n"
+  end
 
   def dialogue(short_name, narration)
     final_result = ""
