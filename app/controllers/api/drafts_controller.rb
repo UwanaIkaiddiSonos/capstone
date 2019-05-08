@@ -40,7 +40,6 @@ class Api::DraftsController < ApplicationController
     final_result = ""
     if character[0] != " "
       @short_name = character[0].downcase
-      final_result += "# Characters used in-game\n"
       final_result += "define #{character[0].downcase} = Character(_(\"#{character}\"), color=\"#{color_hex}\")\n"      
     end
     return final_result 
